@@ -9,18 +9,11 @@ def read_data_from_cov19():
     deps = Departamento.objects.all()
 
     for dep in deps:
-        print('---- dep.codigo:')
-        print(dep)
         data_dep = data['departamento'][dep.codigo]
-        print('data_dep:')
-        print(data_dep)
         reg, c = Registro.objects.get_or_create(
             fecha=date,
             departamento=dep
         )
-        print(c)
-        # if c:
-            # reg.departamento = dep
         reg.confirmados = data_dep['contador']['confirmados']
         reg.decesos = data_dep['contador']['decesos']
         reg.recuperados = data_dep['contador']['recuperados']
@@ -28,5 +21,3 @@ def read_data_from_cov19():
         reg.descartados = data_dep['contador']['descartados']
         reg.total = data_dep['total']
         reg.save()
-        print(reg)
-        print('SAVED')
