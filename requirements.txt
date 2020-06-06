@@ -6,7 +6,7 @@ chardet==3.0.4
 click==7.1.1
 croniter==0.3.31
 decorator==4.4.2
-Django==3.0.5
+Django==3.0.7
 django-rq==2.3.0
 idna==2.9
 ipython==7.13.0
